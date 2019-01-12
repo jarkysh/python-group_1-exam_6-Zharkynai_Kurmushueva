@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}View{% endblock %}
+
+{% block menu %}
+{% endblock %}
+<div class="mt-3">
+        {% for post in post_list %}
+            <h4><a href="{% url 'post_detail' post.pk %}">{{ post.post }}</a></h4>
+            <p>{{ post.text }}</p>
+            <p>{{ post.author }}</p>
+            <a href="{% url 'post_update' post.pk %}">Изменить</a>
+            <a href="{% url 'post_delete' post.pk %}">Удалить</a>
+            <hr>
+        {% endfor %}
+    </div>

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}Проект{% endblock %}
+
+{% block content %}
+    <h1>{{ post.post }}</h1>
+    <p>{{ post.text }}</p>
+
+    <h5>Задачи <a href="{% url 'post_list' post.pk %}">(+)</a></h5>
+    {% for post in post.list.all %}
+        <p class="ml-5">{{ post.title }} ({{ post.author }})</p>
+    {% endfor %}
+
+
+{% endblock %}
