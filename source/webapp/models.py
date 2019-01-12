@@ -14,10 +14,11 @@ class UserInfo(models.Model):
     name = models.CharField(max_length=200, null=False, blank=False, verbose_name='Имя')
     password = models.CharField(max_length=200, null=False, blank=False, verbose_name='Пароль')
     phone = models.CharField(max_length=20,verbose_name="Телефон")
-    friends = models.ForeignKey(User, on_delete=models.PROTECT, verbose_name='Друзья')
+    #photo = models.ImageField(verbose_name='Фотография')
+    friends = models.ForeignKey(User,  on_delete=models.PROTECT, verbose_name='Друзья')
 
     def __str__(self):
-        return self.user, self.name
+        return self.name
 
 class Post(models.Model):
     title = models.CharField(max_length=200, null=False, blank=False, verbose_name='Заголовок')
