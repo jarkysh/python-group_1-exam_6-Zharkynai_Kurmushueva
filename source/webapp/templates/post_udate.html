@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 
-{% block title %}Новый пост{% endblock %}
+{% block title %}Редактировать пост{% endblock %}
 
 {% block content %}
-    <h1>Новый пост</h1>
-    <form action="{% url 'post_create' %}" method="post">
+    <h1>Редактировать прост</h1>
+    <form action="{% url 'post_update' form.post.pk %}" method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit" class="btn btn-primary">Сохранить</button>

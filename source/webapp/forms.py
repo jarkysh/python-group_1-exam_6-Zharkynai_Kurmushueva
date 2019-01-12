@@ -2,6 +2,7 @@ from django import forms
 from webapp.models import Post, User
 
 
+
 class PostSearchForm(forms.Form):
     search_string = forms.CharField(max_length=200, required=False, label='Критерий поиска')
 

@@ -1,18 +1,18 @@
-from django.views.generic import ListView, DetailView, FormView, TemplateView, View, RedirectView
 from django.http import HttpResponseRedirect, JsonResponse
 from django.urls import reverse
 from webapp.models import UserInfo, Post
 from django.shortcuts import get_object_or_404
 from django.utils import timezone
-from django.views.generic import DetailView, ListView, CreateView, UpdateView, View, DeleteView, FormView
+from webapp.forms import PostForm, UserForm
+from django.views.generic import DetailView, ListView, CreateView, UpdateView, View, DeleteView, FormView, TemplateView, RedirectView
 
 #from webapp.models import Food, Order, OrderFood
-#from webapp.forms import FoodForm, OrderForm, OrderFoodForm
+
 
 class PostListView(ListView, FormView):
     model = Post
     template_name = 'post_list.html'
-    #form_class = PostSearchForm
+   #form_class = PostSearchForm
 
 
 class PostDetailView(DetailView):
