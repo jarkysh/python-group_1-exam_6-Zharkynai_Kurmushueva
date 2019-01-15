@@ -18,13 +18,17 @@ from django.urls import include
 from django.urls import path
 from django.conf.urls.static import static
 from django.conf import settings
-from webapp.views import PostDetailView, PostListView
+from webapp.views import *
+from accounts.views import login_view, logout_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', PostListView.as_view(), name='post_list'),
-    path('post_detail/<int:pk>', PostDetailView.as_view(), name='post_detail'),
-    path('auth/login', login_view, name='login'),
-    path()
-    path('accounts/', include('django.contrib.auth.urls'))
+    path('post/<int:pk>', PostDetailView.as_view(), name='post_detail'),
+    path('accounts/login', login_view, name='login'),
+    path('accounts/logout', logout_view, name='logout'),
+    path('post/create', PostCreateView.as_view(), name='post_create'),
+    path('post/<int:pk>/update', PostUpdateView.as_view(), name='post_update'),
+    path('post/<int:pk>/delete', View.as_view(), name='post_delete'),
+    path('',UserListView.as_view(), name='user_list'),
 ]

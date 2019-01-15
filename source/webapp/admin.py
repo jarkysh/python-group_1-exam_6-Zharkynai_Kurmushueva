@@ -11,13 +11,13 @@ class PostInLine2(admin.StackedInline):
    model = UserInfo
 
 class AdminPost(admin.ModelAdmin):
-   list_display = ["title","text","author"]
+   list_display = ["title","text","author",]
 
 
 
 
 
-admin.site.unregister(User)
+#admin.site.register(User)
 admin.site.register(UserInfo)
 admin.site.register(Post, AdminPost)
 

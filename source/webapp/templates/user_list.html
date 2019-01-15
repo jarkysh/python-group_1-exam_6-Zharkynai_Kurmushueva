@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}View{% endblock %}
+
+{% block menu %}
+{% endblock %}
+{% block content %}
+<div class="mt-3">
+        {% for user in user_list %}
+            <h4><a href="{% url 'user_list'%}">{{ user.user}}</a></h4>
+            <p>{{ user.name }}</p>
+            <p>{{ user.post }}</p>
+            <p>{{ user.photo }}</p>
+            <p>{{ user.phone }}</p>
+            <p>{{ user.friends }}</p>
+           <hr>
+        {% endfor %}
+    </div>
+
+{% endblock %}
+
+
