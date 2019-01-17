@@ -20,17 +20,18 @@
             <p>Имя: {{ user.name }}</p>
             <p>Почта: {{ user.email }}</p>
             <script>
-            $("btn").ready(function(){
-                $(this).hide(1000);
 
-                    });
-                $("btn").click(function () {
-                    $(this).show(1000);
+        $(function () {
+            let phone = $('.phone');
+            phone.hide(1000);
+            $('.btn').click(function () {
+                phone.show(1000);
+            });
 
-                    });
-                });
-            </script>
-            <p>Телефон: {{ user.phone }} <button class="btn">Паказать номер телефона</button></p>
+        });
+    </script>
+    <p class="phone">Телефон: {{ user.phone }} </p><button class="btn">Паказать номер телефона</button>
+                       </script>
             <p>Друзья: {{ user.friends }}</p>
             {% for user in userinfo_list %}
             {{ forloop.counter }}
