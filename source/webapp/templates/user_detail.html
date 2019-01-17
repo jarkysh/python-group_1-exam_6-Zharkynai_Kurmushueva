@@ -3,10 +3,11 @@
 {% block title %}Редактировать пост{% endblock %}
 
 {% block content %}
-    <h1>Редактировать пользователя</h1>
-    <form action="{% url 'user_list' form.user.pk %}" method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-primary">Сохранить</button>
-    </form>
+
+    <h3>Редактировать пользователя</h3>
+
+    <p class="ml-5">{{ userinfo.name }} {{ userinfo.photo }} </p>
+            {% for post in  userinfo.user.author_post.all %}
+                <div>{{ post.title }}</div>
+            {% endfor %}
 {% endblock %}

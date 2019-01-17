@@ -1,6 +1,5 @@
 from django import forms
-from webapp.models import Post, User
-
+from webapp.models import Post, User, UserInfo
 
 
 class PostSearchForm(forms.Form):
@@ -16,5 +15,6 @@ class PostForm(forms.ModelForm):
 
 class UserForm(forms.ModelForm):
     class Meta:
-        model = User
-        exclude = ['Post']
+        model = UserInfo
+        fields = ['photo', 'phone']
+

@@ -2,12 +2,13 @@
 {% block title %}Проект{% endblock %}
 
 {% block content %}
+    <div class="mt-3">
     <h1>{{ post.post }}</h1>
     <p>{{ post.text }}</p>
     <h5>Post <a href="{% url 'post_detail' post.pk %}">(+)</a></h5>
     {% for post in posts.list.all %}
         <p class="ml-5">{{ post.title }} ({{ post.author }})</p>
     {% endfor %}
-
+    </div>
 
 {% endblock %}

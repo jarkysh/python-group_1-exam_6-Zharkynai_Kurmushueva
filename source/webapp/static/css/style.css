@@ -1,0 +1,37 @@
+body {
+	margin: 0;
+	font-family: arial, sans-serif;
+}
+
+.container {
+	width: 1000px;
+	margin: 50px auto;
+    padding-right: 10%;
+    padding-left: 10%;
+}
+
+.navbar{
+	background: #5bbc2e;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.navbar-nav{
+	padding-left: 15px;
+}
+.nav-item a{
+	font-size: 13px;
+	font-weight: 600;
+	color: #0c5460;
+}
+
+.nav-link a:hover {
+	color: #f7f7f7;
+}
+
+.btn btn-success{
+	font-size: 14px;
+	font-weight: 700;
+	color: #171a1d;
+
+}

@@ -6,10 +6,12 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <title>{% block title %}{% endblock %}</title>
 
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
     {% block styles %}{% endblock %}
 </head>
 <body>
@@ -25,26 +27,42 @@
                 <li class="nav-item">
                     <a href="{% url 'logout' %}" class="nav-link">Выход</a>
                 </li>
+                <ul class="nav nav-tabs">
+                      <li class="nav-item ">
+                         <a class="nav-link" href="{% url 'post_list' %}" >Новости</a>
+                      </li>
+                      <li class="nav-item">
+                       <a class="nav-link" href="{% url 'post_create' %}">Добавить пост</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="{% url 'user_list' %}">Данные о пользователе</a>
+                      </li>
+                </ul>
+
+
+
             {% else %}
                 <li class="nav-item">
                     <a href="{% url 'login' %}" class="nav-link">Вход</a>
                 </li>
 
+
+        </ul>
+                <ul class="nav nav-tabs">
+                      <li class="nav-item ">
+                         <a class="nav-link" href="{% url 'post_list' %}" >Новости</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="{% url 'user_list' %}">Данные о пользователе</a>
+                      </li>
+                </ul>
+
             {% endif %}
-     </ul>
-
-            <a href="{% url 'post_list' %}" class="nav-link">Новости</a>
-
-       <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Личный кабинет пользователя </a>
-           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="{% url 'user_list' %}">Данные о пользователе</a>
-           </div>
-        </li>
-                <a href="{% url 'post_create' %}">Добавить пост</a>
-        {% block menu %}{% endblock %}
-     </ul>
     </div>
+
+        {% block menu %}{% endblock %}
+
+
 </nav>
 <div class="container">
     {% block content %}{% endblock %}
@@ -55,3 +73,4 @@
 {% block scripts %}{% endblock %}
 </body>
 </html>
+
