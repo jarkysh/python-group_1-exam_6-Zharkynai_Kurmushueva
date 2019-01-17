@@ -20,12 +20,12 @@
             <p>Имя: {{ user.name }}</p>
             <p>Почта: {{ user.email }}</p>
             <script>
-            $(document).ready(function(){
-                $({{ user.phone }}).hide();
+            $("btn").ready(function(){
+                $(this).hide(1000);
 
                     });
-                $({{ user.phone }}).click(function () {
-                    $("p").show();
+                $("btn").click(function () {
+                    $(this).show(1000);
 
                     });
                 });
